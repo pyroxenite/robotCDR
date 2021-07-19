@@ -27,7 +27,6 @@ void runBackward(float speed){
 	DRV8825_setDir(&moteur_D, BACKWARD);
 	DRV8825_setDir(&moteur_G, BACKWARD);
 
-
 	DRV8825_moveMotorLineSpeed(&moteur_D, speed);
 	DRV8825_moveMotorLineSpeed(&moteur_G, speed);
 }
@@ -56,4 +55,20 @@ void rotateD(float speed_L, float speed_R){
 
 	DRV8825_moveMotorLineSpeed(&moteur_D, speed_R);
 	DRV8825_moveMotorLineSpeed(&moteur_G, speed_L);
+}
+
+void setMotors(double left, double right) {
+    // vitesses absolues
+    DRV8825_moveMotorLineSpeed(&moteur_G, fabs(left));
+    DRV8825_moveMotorLineSpeed(&moteur_D, fabs(right));
+
+    // directions
+    DRV8825_setDir(&moteur_G, (left < 0)?BACKWARD:FORWARD);
+    DRV8825_setDir(&moteur_D, (right < 0)?BACKWARD:FORWARD);
+
+    // activer ou non les moteurs
+    if (left == 0 && right == 0)
+        stopMoteurs();
+    else
+    	startMoteurs();
 }

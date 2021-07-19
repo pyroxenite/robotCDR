@@ -16,5 +16,6 @@ void stopMoteurs();
 void startMoteurs();
 void rotateG(float speed_L, float speed_R);
 void rotateD(float speed_L, float speed_R);
+void setMotors(double left, double right);
 
 #endif /* INC_MOTEUR_H_ */

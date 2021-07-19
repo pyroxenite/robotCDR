@@ -9,22 +9,6 @@ double initialAngleError = 0;
 double leftMotorValues[FIR_ORDER] = {0};
 double rightMotorValues[FIR_ORDER] = {0};
 
-void setMotors(double left, double right) {
-    // vitesses absolues
-    DRV8825_moveMotorLineSpeed(&moteur_G, fabs(left));
-    DRV8825_moveMotorLineSpeed(&moteur_D, fabs(right));
-
-    // directions
-    DRV8825_setDir(&moteur_G, (left < 0)?BACKWARD:FORWARD);
-    DRV8825_setDir(&moteur_D, (right < 0)?BACKWARD:FORWARD);
-
-    // activer ou non les moteurs
-    if (left == 0 && right == 0)
-        stopMoteurs();
-    else
-    	startMoteurs();
-}
-
 void setMotorsSmoothly() {
 	double left = 0, right = 0;
 	for (int i=0; i<FIR_ORDER; i++) {
