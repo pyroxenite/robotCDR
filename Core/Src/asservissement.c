@@ -1,8 +1,13 @@
 #include "asservissement.h"
 
-#define FIR_ORDER 5
+#define FIR_ORDER 1
 #define VALID_RADIUS 5
 #define VALID_ANGLE 0.05
+
+#define VMAX_RECT 10 // 10 c'est pas mal
+#define VMIN_DISTANCE 1
+#define VMAX_ROTATION 4
+#define VMIN_ROTATION 0.1
 
 double initialAngleError = 0;
 
@@ -72,11 +77,10 @@ void ASSERV_update(CONSIGNE point, CONSIGNE previous) {
     double rotateProgress = toZeroOne(1 - angleError/initialAngleError);
 
     // vitesse du robot
-
     if (pointDistance > VALID_RADIUS) {
         // le robot est loin
     	double speed = 0, spin = 0;
-    	speed = VMAX_DISTANCE*speedCurve(moveProgress)*segmentLength/1000 + VMIN_DISTANCE;
+    	speed = VMAX_RECT*speedCurve(moveProgress)*segmentLength/1000 + VMIN_DISTANCE;
     	speed *= 1/(1+pow(fabs(angleError/VALID_ANGLE), 2));
     	speed *= (point.dir==FORWARD)?1:-1;
     	spin = VMAX_ROTATION*(speedCurve(rotateProgress)*fabs(initialAngleError)/M_PI + speedCurve(moveProgress)*fabs(angleError))/2;

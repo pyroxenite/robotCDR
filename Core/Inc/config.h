@@ -15,7 +15,7 @@ typedef int bool;
 #define MODULE_COMPTEUR 1
 #define MODULE_DEBUG 1
 #define MODULE_IHM 1
-#define MODULE_LIDAR 0
+#define MODULE_LIDAR 1
 #define MODULE_MOTEURS 1
 #define MODULE_ODOMETRIE 1
 #define MODULE_STRATEGIE 1
@@ -44,11 +44,6 @@ typedef int bool;
 //#define VMIN_DISTANCE 1
 //#define VMAX_ROTATION 4
 //#define VMIN_ROTATION 0.1
-
-#define VMAX_DISTANCE 5
-#define VMIN_DISTANCE 0.5
-#define VMAX_ROTATION 2
-#define VMIN_ROTATION 0.1
 
 
 /* Module Debug */
