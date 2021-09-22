@@ -14,13 +14,12 @@ typedef int bool;
 #define MODULE_ASSERVISSEMENT 1
 #define MODULE_COMPTEUR 1
 #define MODULE_DEBUG 1
-#define MODULE_IHM 1
-#define MODULE_LIDAR 1
+#define MODULE_IHM 0
+#define MODULE_LIDAR 0
 #define MODULE_MOTEURS 1
 #define MODULE_ODOMETRIE 1
 #define MODULE_STRATEGIE 1
-#define MODULE_TIRETTE 1
-
+#define MODULE_TIRETTE 0
 
 
 /* Module actionneurs */
@@ -40,15 +39,11 @@ typedef int bool;
 #define ASSERV_DISTANCE_EN 1
 
 // Vitesses et accélérations max
-//#define VMAX_DISTANCE 24
-//#define VMIN_DISTANCE 1
-//#define VMAX_ROTATION 4
-//#define VMIN_ROTATION 0.1
 
 
 /* Module Debug */
 #define DEBUG_ODOMETRIE 0
-#define DEBUG_ASSERVISSEMENT 1
+#define DEBUG_ASSERVISSEMENT 0
 #define DEBUG_LIDAR 0
 #define DEBUG_CPT 0
 #define DEBUG_FAULT 0
@@ -76,9 +71,15 @@ typedef int bool;
 
 
 /* Module Odométrie */
-#define COEFF_CODEUR_L 0.0405726153
-#define COEFF_CODEUR_R 0.0403868872
-#define ENTRAXE 251
+//#define COEFF_CODEUR_L 0.0405726153
+//#define COEFF_CODEUR_R 0.0403868872
+//#define COEFF_CODEUR_L 0.04127157978967
+//#define COEFF_CODEUR_R 0.04127157978967
+// calibré
+#define COEFF_CODEUR_L 0.0400751912679162
+#define COEFF_CODEUR_R 0.0400751912679162
+
+#define ENTRAXE 256 // reel = 253
 
 
 /* Module Stratégie */
