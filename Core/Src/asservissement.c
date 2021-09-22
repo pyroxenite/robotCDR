@@ -13,7 +13,7 @@ double initialAngleError = 0;
 int isRotating = 0;
 
 /**
- * Borne une valeur donné dans [0, 1].
+ * Borne une valeur donnée dans [0, 1].
  * @param x La valeur à borner.
  * @return Si possible x, 0 ou 1 sinon.
  */
@@ -62,7 +62,7 @@ double speedCurve1(double progress) {
 //}
 
 /**
- * Cette fonction est appelé à intervalles réguliers pour piloter le robot.
+ * Cette fonction est appelée à intervalles réguliers pour piloter le robot.
  * @param point Le point visé.
  * @param point Le point où le robot commence son déplacement.
  */
